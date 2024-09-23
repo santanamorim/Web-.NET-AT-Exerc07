@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Web_.NET_AT_Exerc07.Models.Livro>
+
+<h2>Lista de Livros</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Titulo</td>
+                <td>@item.Autor</td>
+                <td>
+                    <!-- Adicionando uma confirmação antes de deletar -->
+                    <a asp-action="Delete" asp-route-id="@item.Id"
+                       onclick="return confirm('Tem certeza que deseja deletar este livro?');">
+                        Deletar
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create">Adicionar Novo Livro</a>

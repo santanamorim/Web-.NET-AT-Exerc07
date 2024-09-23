@@ -1,0 +1,16 @@
+﻿@model Web_.NET_AT_Exerc07.Models.Livro
+
+<h2>Deletar Livro</h2>
+
+<div>
+    <h3>Tem certeza que deseja deletar o seguinte livro?</h3>
+    <div>
+        <h4>@Model.Titulo</h4>
+        <h4>@Model.Autor</h4>
+    </div>
+    <form asp-action="DeleteConfirmed">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Deletar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
